@@ -38,10 +38,10 @@ The following directory structure is required for data.
 ```bash
 ├── root
     ├── DATA_DIRECTORY
-        ├── HE
-        ├── CD4
+        ├── HE                             # Hematoxylin-Eosin WSIs, e.g., slide_001.tiff, slide_002.tiff
+        ├── CD4                            # CD4 IHC WSIs, e.g., slide_001.tiff, slide_002.tiff
         └── ...
-    └── ANNOTATION_DIR(optional)
+    └── ANNOTATION_DIR(optional)           # Optional, e.g., slide_001.json, slide_002.json
 ```
 
 ## WSI Segmentation and Patching
