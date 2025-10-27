@@ -1,5 +1,15 @@
 # Multi-Stain Attention Multiple Instance Learning for Prognosis Prediction in Esophageal Squamous Cell Carcinoma
 
+Esophageal squamous cell carcinoma (ESCC) is a highly aggressive cancer with poor prognosis. Accurate prognostic models are essential for guiding personalized treatment strategies. However, most existing models rely solely on hematoxylin-eosin (HE) stained images, without fully leveraging the complementary information provided by multiple immunohistochemical (IHC) stains. IHC markers are crucial for capturing immune-related features within the tumor microenvironment, which are closely associated with patient outcomes. To address this limitation, we propose Multi-Stain Attention Multiple Instance Learning (MSAMIL), a novel framework that integrates information from multiple staining modalities—including key IHC markers such as CD4 and PD-L1 alongside HE—to better capture tumor-immune interactions and tissue heterogeneity. We evaluate MSAMIL on a private dataset, which includes whole slide images (WSIs) from nine staining modalities across 208 ESCC patients. The model predicts 4-year disease-free survival (DFS) with superior accuracy and F1 score compared to existing methods. We further observe that the choice of feature extractor significantly affects performance: domain-specific backbones such as Prov-Gigapath consistently outperform generic encoders, underscoring the importance of tailored pretraining for histopathological representation learning. Ablation confirms the fusion module is critical for modeling cross-modality interactions. Modality contribution analysis shows that CD4 and PD-L1 contribute most significantly, underscoring their importance in capturing tumor immune microenvironment (TIME) features relevant to prognosis. MSAMIL thus provides a powerful tool for ESCC prognostic prediction and may support personalized treatment decisions. The code is available at \href{http://github.com/wzhy2000/MSAMIL}{http://github.com/wzhy2000/MSAMIL}.
+
+
+
+**Multi-Stain Attention Multiple Instance Learning for Prognosis Prediction in Esophageal Squamous Cell Carcinoma**
+
+Xiaoya Fan, Zhengde Jia, Yuanyuan Han, Ruishan Geng, Xiaoyan Li, and Zhong Wang
+
+
+
 ## Installation
 
 Create a conda environment and install the requirements
@@ -21,7 +31,7 @@ pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2
 ```
 
 
-## WSI Segmentation and Patching
+## Datasets
 
 The following directory structure is required for data.
 
@@ -33,6 +43,9 @@ The following directory structure is required for data.
         └── ...
     └── ANNOTATION_DIR(optional)
 ```
+
+## WSI Segmentation and Patching
+
 Before running the script, set the path in the script itself.
 
 ```shell
